@@ -9,10 +9,21 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *txtfiled;
+@property (weak, nonatomic) IBOutlet UITextField *txtfield2;
 
 @end
 
 @implementation ViewController
+-(void) viewDidAppear:(BOOL)animated{
+    [self.txtfiled becomeFirstResponder];
+}
+- (IBAction)hideKeyboard:(id)sender {
+    [self.txtfiled resignFirstResponder];
+}
+- (IBAction)appearKeyboard:(id)sender {
+    [self.txtfiled becomeFirstResponder];
+}
 
 - (void)viewDidLoad
 {
